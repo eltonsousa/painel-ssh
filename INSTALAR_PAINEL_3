@@ -10,7 +10,7 @@ MODIFICAÇÕES BY ELTON
 
 1 - Vamos instalar o Apache  
 
-wget http://174.138.58.91/download/install_painel3.sh
+wget https://raw.githubusercontent.com/Leonn34/painel-ssh/master/download/install_painel3.sh
 
 chmod 777 install_painel3.sh
 
@@ -79,7 +79,7 @@ Instalação Servidor SSH  Ubuntu 16.4 / Ubuntu 14.4
 
 1 - Baixe os scripts para a vps.  
 
-wget http://174.138.58.91/download/vpsmanager.sh
+wget https://raw.githubusercontent.com/Leonn34/painel-ssh/master/download/script-sousatips.sh
   
 apt-get update && apt-get upgrade 
 
@@ -89,7 +89,7 @@ chmod 777 vpsmanager.sh
 
 3 - Feito isso agora vamos instalar o vpsmanager 2.0
   
-./vpsmanager.sh
+./script-sousatips.sh
 
 
 • Sigua as orientações que a instalação vai pedir, tenha certeza que o IP apresentado na instalação eo mesmo da sua VPS. 
