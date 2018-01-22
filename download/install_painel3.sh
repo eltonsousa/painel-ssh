@@ -47,6 +47,7 @@ php -m |grep ssh2
 service apache2 restart
 sleep 4
 dpkg-reconfigure tzdata
+rm install_painel3.sh
 cd /var/www/html
 wget https://github.com/Leonn34/painel-ssh/raw/master/download/painel3.zip
 apt-get install unzip
