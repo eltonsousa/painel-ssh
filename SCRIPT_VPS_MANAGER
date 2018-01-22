@@ -9,14 +9,15 @@ dpkg-reconfigure tzdata
 ##################################################################
 MEU SCRIPT MODIFICADO
 
-wget http://174.138.58.91/download/script_vps_sousatips/setup_script_sousatips.sh
+wget https://raw.githubusercontent.com/Leonn34/painel-ssh/master/download/script-sousatips.sh
 
-chmod +x setup_script_sousatips.sh
+chmod +x script-sousatips.sh
 
-./setup_script_sousatips.sh
+./script-sousatips.sh
 ###################################################################
+VPS MANAGER ORIGINAL
 
-wget http://174.138.58.91/download/vpsmanager.sh
+wget https://raw.githubusercontent.com/Leonn34/painel-ssh/master/download/vpsmanager.sh
 
 chmod +x vpsmanager.sh
 
@@ -30,14 +31,4 @@ wget http://174.138.58.91/painelssh3.0/source/scripts/install.sh
 chmod +x install.sh
 
 ./install.sh
-###################################################################a
-
-GIT HUB
-
-wget https://raw.githubusercontent.com/Leonn34/script_vps_sousatips/master/setup_script_sousatips.sh
-
-chmod +x setup_script_sousatips.sh
-
-./setup_script_sousatips.sh
-
-###################################################################a
+###################################################################
