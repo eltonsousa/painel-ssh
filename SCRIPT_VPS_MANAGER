@@ -1,0 +1,43 @@
+*configurar data
+
+dpkg-reconfigure tzdata
+
+###################################################################
+--INSTALAÇÃO VPSMANAGER ORIGINAL
+--INSTALAÇÃO NO SERVIDOR
+--UTILIZAR UBUNTU 14
+##################################################################
+MEU SCRIPT MODIFICADO
+
+wget http://174.138.58.91/download/script_vps_sousatips/setup_script_sousatips.sh
+
+chmod +x setup_script_sousatips.sh
+
+./setup_script_sousatips.sh
+###################################################################
+
+wget http://174.138.58.91/download/vpsmanager.sh
+
+chmod +x vpsmanager.sh
+
+./vpsmanager.sh
+
+###################################################################
+INSTALAÇÃO VPSMANAGER PARA PAINEL 3
+
+wget http://174.138.58.91/painelssh3.0/source/scripts/install.sh
+
+chmod +x install.sh
+
+./install.sh
+###################################################################a
+
+GIT HUB
+
+wget https://raw.githubusercontent.com/Leonn34/script_vps_sousatips/master/setup_script_sousatips.sh
+
+chmod +x setup_script_sousatips.sh
+
+./setup_script_sousatips.sh
+
+###################################################################a

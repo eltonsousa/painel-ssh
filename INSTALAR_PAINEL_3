@@ -1,0 +1,117 @@
+Instalação do Painel WEB de Gerenciamento SSH 3.0  Debian 8 32x / Debian 8 64x
+MODIFICAÇÕES BY ELTON 
+
+ ATENÇÃO IMPORTANTE 
+ 
+• Sempre que solicitado [Y/N] escolha a opção Y (Sim para Todos).  
+• Sempre que solicitado digite sempre a mesma senha de sua preferencia (letras e numeros, não use caracteres especiais ou espaço)  
+• Para a seleção do servidor, escolha apache2. 
+• Selecione Sim quando perguntado se deseja usar dbconfig-common para configurar o banco de dados.  
+
+1 - Vamos instalar o Apache  
+
+wget http://174.138.58.91/download/install_painel3.sh
+
+chmod 777 install_painel3.sh
+
+bash install_painel3.sh
+
+• Continue somente apos aparecer a mensagem "COMPLETADO COM SUCESSO!".  
+
+service apache2 restart 
+
+2 - Criar o Banco de Dados SSH 
+• Altere o comando abaixo trocando SUA_SENHA pela senha que voce esta utilizando, o -p deve ficar junto a sua senha sem espaço 
+
+• Caso voce tenha usado caracteres especiais nesta parte o comando dara erro.  
+
+
+mysql -h localhost -u root -pSUA_SENHA -e "CREATE DATABASE painel3"  
+
+
+service apache2 restart 
+
+
+3 - Configurarando comando de Agendamento Crontab 
+
+• Os comandos a seguir serão responsaveis por fazer a atualização dos usuarios online no painel.  
+
+
+crontab -e 
+
+
+• Apos inserir o comando acima vai abrir um documento para edição, copie o texto abaixo (observe o caminho onde está o painel)
+
+
+* * * * * /usr/bin/php /var/www/html/pasta_painel/pages/system/cron.php
+* * * * * /usr/bin/php /var/www/html/pasta_painel/pages/system/cron.ssh.php 
+* * * * * /usr/bin/php /var/www/html/pasta_painel/pages/system/cron.sms.php 
+* * * * * /usr/bin/php /var/www/html/pasta_painel/pages/system/cron.online.ssh.php 
+10 * * * * /usr/bin/php /var/www/html/pasta_painel/pages/system/cron.servidor.php 
+
+• Cole no documento na ultima linha. 
+
+• Apos colar o comando aperte Ctrl+X e escola opção Y depois aperte Enter   
+
+service apache2 restart
+
+*VERIFICAR SE FALTA EDITAR O ARQUIVO SEGURANÇA.PHP*
+*IMPORTAR O BANCO DE DADOS*
+
+
+• Acessando o banco de dados
+ip_vps/phpmyadmin/
+entrar com a senha
+--Importar o banco de dados 
+
+
+FINAL 
+
+• Pronto agora seu painel ja esta pronto, voce pode logar da seguinte forma:  IP_DOMINIO-VPS/admin/  Usuario: admin  Senha: admin 
+
+• Voce pode alterar os dados de login em configurações no painel de gerenciamento. 
+
+• Lembrando que ainda falta configurar a VPS que sera o servidor ssh. O painel pre-configura o servidor mas e preciso executar outros comandos 
+
+CONTINUE ABAIXO NA VPS QUE SERA O SERVIDOR SSH
+
+Instalação Servidor SSH  Ubuntu 16.4 / Ubuntu 14.4 
+
+1 - Baixe os scripts para a vps.  
+
+wget http://174.138.58.91/download/vpsmanager.sh
+  
+apt-get update && apt-get upgrade 
+
+2 - Executar comando de permissão.  
+
+chmod 777 vpsmanager.sh
+
+3 - Feito isso agora vamos instalar o vpsmanager 2.0
+  
+./vpsmanager.sh
+
+
+• Sigua as orientações que a instalação vai pedir, tenha certeza que o IP apresentado na instalação eo mesmo da sua VPS. 
+
+4 - Alterando a Data e a Hora  
+
+dpkg-reconfigure tzdata   
+
+• Escolher opção America e depois São Paulo. FINAL
+
+5 - Configurarando Crontab
+
+crontab -e 
+
+• Apos inserir o comando acima vai abrir um documento para edição, copie o texto abaixo
+
+* * * * * /usr/bin/php /var/www/html/pasta_painel/pages/system/cron.php
+* * * * * /usr/bin/php /var/www/html/pasta_painel/pages/system/cron.ssh.php 
+* * * * * /usr/bin/php /var/www/html/pasta_painel/pages/system/cron.sms.php 
+* * * * * /usr/bin/php /var/www/html/pasta_painel/pages/system/cron.online.ssh.php 
+10 * * * * /usr/bin/php /var/www/html/pasta_painel/pages/system/cron.servidor.php 
+
+• Pronto agora seu servidor ja está configurado e pronto para ser utilizado no painel de gerenciamento, basta adicionar atraves do login de Administrador.
+
+---Caso dê página em branco, dê permissão no diretorio: /pages/system/
