@@ -48,7 +48,7 @@ service apache2 restart
 sleep 4
 dpkg-reconfigure tzdata
 cd /var/www/html
-wget https://github.com/Leonn34/painel-ssh/blob/master/download/painel3.zip?raw=true
+wget https://github.com/Leonn34/painel-ssh/raw/master/download/painel3.zip
 apt-get install unzip
 unzip painel3.zip
 rm painel3.zip index.html
