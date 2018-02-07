@@ -8,7 +8,7 @@ MODIFICAÇÕES BY ELTON
 • Para a seleção do servidor, escolha apache2. 
 • Selecione Sim quando perguntado se deseja usar dbconfig-common para configurar o banco de dados.  
 
-1 - Vamos instalar o Apache  
+1 - Instalação Automática  
 
 wget https://raw.githubusercontent.com/Leonn34/painel-ssh/master/download/install_painel3.sh
 
@@ -81,11 +81,11 @@ Instalação Servidor SSH  Ubuntu 16.4 / Ubuntu 14.4
 
 wget https://raw.githubusercontent.com/Leonn34/painel-ssh/master/download/script-sousatips.sh
   
-apt-get update && apt-get upgrade 
+apt-get update && apt-get upgrade -y 
 
 2 - Executar comando de permissão.  
 
-chmod 777 vpsmanager.sh
+chmod 777 script-sousatips.sh
 
 3 - Feito isso agora vamos instalar o vpsmanager 2.0
   
