@@ -1,4 +1,6 @@
 #!/bin/bash
+
+apt-get update && apt-get upgrade -y
 apt-get install figlet -y
 tput setaf 3 ; tput bold ; echo "===================================================================" ; tput sgr0
 tput setaf 7 ; tput bold ; figlet -c Sousa Tips ; tput sgr0
