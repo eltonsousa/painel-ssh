@@ -1,6 +1,6 @@
 #!/bin/bash
 tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "BEM VINDO AO VPS-SOUSA TIPS" ; tput sgr0
-sleep 2
+sleep 3
 tput setaf 2 ; tput bold ; echo "Créditos phreaker56" ; tput sgr0
 sleep 3
 echo ""
