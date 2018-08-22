@@ -66,7 +66,7 @@ echo ""
 tput setaf 7 ; tput setab 4 ; tput bold ; echo "" ; echo "Aguarde a configuração automática" ; echo "" ; tput sgr0
 sleep 3
 apt-get update -y
-apt-get upgrade -y
+#apt-get upgrade -y
 rm /bin/criarusuario /bin/expcleaner /bin/sshlimiter /bin/addhost /bin/listar /bin/sshmonitor /bin/ajuda > /dev/null
 rm /root/ExpCleaner.sh /root/CriarUsuario.sh /root/sshlimiter.sh > /dev/null
 apt-get install squid3 bc screen nano unzip dos2unix wget -y
